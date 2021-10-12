@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/black</color>
+    <color name="colorSecondary">@color/white</color>
+    <color name="colorAccent">@color/light_grey</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="gold">#FFD700</color>
+    <color name="gold_dark">#C2A300</color>
+
+    <color name="light_grey">#808080</color>
+</resources>
