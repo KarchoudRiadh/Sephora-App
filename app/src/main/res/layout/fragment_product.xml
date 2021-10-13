@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        tools:context=".presentation.view.activities.ProductFragment">
+
+        <ImageView
+            android:id="@+id/iv_product_picture_detail"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/element_height_medium"
+            android:alpha="0.85"
+            android:scaleType="centerCrop"
+            android:src="@drawable/sephora_feature"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_products_description_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:hint="@string/no_products_found_message"
+            android:padding="20dp"
+            android:text="@{productActivityViewModel.mProductDescription}"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_product_picture_detail" />
+
+        <TextView
+            android:id="@+id/tv_products_location_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:hint="@string/no_products_found_message"
+            android:padding="20dp"
+            android:text="@{productActivityViewModel.mProductLocation}"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_products_description_detail" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="productActivityViewModel"
+            type="rk.mk.sephora.presentation.viewmodel.ProductActivityViewModel" />
+    </data>
+</layout>

@@ -1,0 +1,81 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:id="@+id/fl_product_container"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin_extra_small"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_product_container"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:foreground="?selectableItemBackground"
+            android:onClick="@{productViewModel::onProductClick}"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="@dimen/margin_small"
+            app:cardElevation="0dp"
+            app:cardPreventCornerOverlap="false">
+
+            <LinearLayout
+                android:id="@+id/ll_product_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv_product_picture"
+                    productImageUrl="@{productViewModel.mProductPictureUrl}"
+                    android:layout_width="300dp"
+                    android:layout_height="@dimen/element_height_medium"
+                    android:alpha="0.85"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/sephora_feature" />
+
+                <TextView
+                    android:id="@+id/tv_product_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ellipsize="end"
+                    android:gravity="center_horizontal"
+                    android:hint="@string/default_product_location"
+                    android:padding="@dimen/margin_extra_small"
+                    android:singleLine="true"
+                    android:text="@{productViewModel.mLocation}"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/tv_product_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center_horizontal"
+                    android:hint="@string/default_product_description"
+                    android:padding="@dimen/margin_extra_small"
+                    android:singleLine="true"
+                    android:text="@{productViewModel.mDescription}"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </FrameLayout>
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="productViewModel"
+            type="rk.mk.sephora.presentation.viewmodel.ItemProductViewModel" />
+    </data>
+</layout>

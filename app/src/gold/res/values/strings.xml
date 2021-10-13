@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Sephora</string>
+    <string name="app_name">Sephora Gold</string>
     <string name="default_product_description">No available description for this product</string>
     <string name="default_product_location">Cannot locate this product!</string>
     <string name="no_products_found_message">No products were found! Check your internet connection please!</string>
